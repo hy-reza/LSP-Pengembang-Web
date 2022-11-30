@@ -1,0 +1,576 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "LSP TOKO SEDERHANA",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api/v1",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/items": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Get All Items",
+        "operationId": "GetAllItems",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Post Items",
+        "operationId": "PostItems",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PostItemsRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "Motherboard 2",
+                      "price": 123213,
+                      "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Motherboard 2",
+                "price": 123213,
+                "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/items/{id}": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Get Item By ID",
+        "operationId": "GetItemByID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "14c5f90d-e107-4172-b04d-fe6ad345d5f3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Update Items",
+        "operationId": "UpdateItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "14c5f90d-e107-4172-b04d-fe6ad345d5f3"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateItemsRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "PC Updated",
+                      "price": 123123,
+                      "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "PC Updated",
+                "price": 123123,
+                "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Delete Items",
+        "operationId": "NewRequest",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "ca72f605-201c-4b6d-a1d9-2d30b1a31f6a"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/customers": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Get All Customers",
+        "operationId": "GetAllCustomers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Post Customers",
+        "operationId": "PostCustomers",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PostCustomersRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "Reza"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Reza"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/customers/{id}": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Get Item By ID",
+        "operationId": "GetItemByID1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "14c5f90d-e107-4172-b04d-fe6ad345d5f3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Update Customers",
+        "operationId": "UpdateCustomers",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "cc6577f9-15f1-4a79-b91c-4c086a89a1c1"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateCustomersRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "Cholid Updated"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Cholid Updated"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Delete Customers",
+        "operationId": "DeleteNewRequest",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "cc6577f9-15f1-4a79-b91c-4c086a89a1c1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get All Transactions",
+        "operationId": "GetAllTransactions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Post Transactions",
+        "operationId": "PostTransactions",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PostTransactionsRequest"
+                  },
+                  {
+                    "example": {
+                      "customersId": "83cd8c94-47b8-4578-86c6-c910de7c3874",
+                      "itemsId": "46172bfb-088f-48ce-889a-09c672829467"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "customersId": "83cd8c94-47b8-4578-86c6-c910de7c3874",
+                "itemsId": "46172bfb-088f-48ce-889a-09c672829467"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/{id}": {
+      "put": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Pay Transaction",
+        "operationId": "PayTransaction",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "null"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Cancel Transaction",
+        "operationId": "CancelTransaction",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "a88ea194-bc22-4337-831a-44d72526bce2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PostItemsRequest": {
+        "title": "PostItemsRequest",
+        "required": [
+          "name",
+          "price",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Motherboard 2",
+          "price": 123213,
+          "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+        }
+      },
+      "UpdateItemsRequest": {
+        "title": "UpdateItemsRequest",
+        "required": [
+          "name",
+          "price",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "PC Updated",
+          "price": 123123,
+          "description": "Istilah komputer pribadi mempunyai beberapa arti: Istilah umum yang merujuk pada komputer yang dapat digunakan dan diperoleh orang dengan mudah. Istilah umum yang meruju kepada mikrokomputer sesuai dengan spesifikasi IBM."
+        }
+      },
+      "PostCustomersRequest": {
+        "title": "PostCustomersRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Reza"
+        }
+      },
+      "UpdateCustomersRequest": {
+        "title": "UpdateCustomersRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Cholid Updated"
+        }
+      },
+      "PostTransactionsRequest": {
+        "title": "PostTransactionsRequest",
+        "required": [
+          "customersId",
+          "itemsId"
+        ],
+        "type": "object",
+        "properties": {
+          "customersId": {
+            "type": "string"
+          },
+          "itemsId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customersId": "83cd8c94-47b8-4578-86c6-c910de7c3874",
+          "itemsId": "46172bfb-088f-48ce-889a-09c672829467"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Items"
+    },
+    {
+      "name": "Customers"
+    },
+    {
+      "name": "Transactions"
+    }
+  ]
+}
